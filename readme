@@ -1,0 +1,78 @@
+Descrição: O projeto Biblioteca é um sistema de gerenciamento de uma pequena biblioteca. Ele permite a gestão de autores, livros e empréstimos. O sistema foi projetado para armazenar informações sobre autores e livros, registrar empréstimos de livros e gerenciar o status dos empréstimos.
+
+Funcionalidades:
+
+Gerenciamento de Autores:
+
+Armazenar informações sobre autores, incluindo nome e nacionalidade.
+Gerenciamento de Livros:
+
+Armazenar informações sobre livros, incluindo título, autor, ano de publicação e gênero.
+Registro de Empréstimos:
+
+Registrar empréstimos de livros, incluindo a data de empréstimo, data de devolução (se aplicável) e o nome do usuário.
+Consultas:
+
+Consultar os livros e seus autores.
+Consultar empréstimos ativos (livros que ainda não foram devolvidos).
+Atualização e Exclusão:
+
+Atualizar informações sobre empréstimos.
+Excluir registros de empréstimos e livros.
+
+# Biblioteca
+
+## Descrição
+
+Este projeto é um sistema de gerenciamento para uma pequena biblioteca. O objetivo é gerenciar informações sobre autores, livros e empréstimos. Ele permite a inserção, atualização e exclusão de registros, além de consultas para verificar o estado dos empréstimos e os detalhes dos livros e autores.
+
+## Estrutura do Banco de Dados
+
+O banco de dados é composto pelas seguintes tabelas:
+
+- **Autores**
+  - `autorID` (int, auto-incremento, chave primária)
+  - `nome` (varchar(100), não nulo)
+  - `nacionalidade` (varchar(100))
+
+- **Livros**
+  - `livroID` (int, auto-incremento, chave primária)
+  - `título` (varchar(255), não nulo)
+  - `autorID` (int, chave estrangeira referenciando `Autores`)
+  - `AnoPublicado` (year)
+  - `genero` (varchar(50))
+
+- **Emprestimos**
+  - `EmprestimoID` (int, auto-incremento, chave primária)
+  - `LivroID` (int, chave estrangeira referenciando `Livros`)
+  - `DataEmprestimo` (date, não nulo)
+  - `DataDevolucao` (date)
+  - `NomeUsuario` (varchar(100), não nulo)
+
+## Instruções para Execução
+
+1. **Clone o Repositório:**
+   git clone https://github.com/seu-usuario/biblioteca.git
+
+Acesse o Diretório do Projeto:
+
+Copiar código
+cd biblioteca
+Configuração do Banco de Dados:
+
+Execute os scripts SQL fornecidos para criar e configurar o banco de dados.
+Executar Consultas e Operações:
+
+Utilize um cliente de SQL para conectar ao banco de dados e executar consultas e operações de acordo com suas necessidades.
+Scripts SQL
+criação.sql: Contém os comandos para criar o banco de dados e as tabelas.
+dados_iniciais.sql: Contém os comandos para inserir dados iniciais no banco de dados.
+Contribuições
+Contribuições são bem-vindas! Para contribuir, siga os passos abaixo:
+
+Faça um fork deste repositório.
+Crie uma branch para suas alterações.
+Faça commit das suas alterações.
+Envie um pull request para a branch principal.
+Licença
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo LICENSE para mais detalhes.
